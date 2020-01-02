@@ -1,3 +1,5 @@
+# Loan Monthly Payment Calculator
+
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
@@ -26,8 +28,8 @@ def years_to_months(years)
   years * 12
 end
 
-def payment(la, j, n)
-  la * (j / (1 - (1 + j)**(-n)))
+def payment(loan_amount, rate, duration)
+  loan_amount * (rate / (1 - (1 + rate)**(-duration)))
 end
 
 prompt("Welcome to the Loan Payment Calculator!")
@@ -76,7 +78,7 @@ loop do # main loop
   monthly_payment = payment(loan_amount.to_i, monthly_rate, duration_in_months)
 
   prompt("Your monthly payment is $#{monthly_payment.round(2)}!")
-  prompt("Would you like to perform another calculation? (Y to calculate again)")
+  prompt("Would you like to perform another calculation?(Y to calculate again)")
   answer = Kernel.gets().chomp()
   break unless answer.downcase().start_with?('y')
 end
