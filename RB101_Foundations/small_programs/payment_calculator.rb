@@ -83,4 +83,4 @@ loop do # main loop
   break unless answer.downcase().start_with?('y')
 end
 
-prompt("That you for using the Loan Payment Calculator. Good bye!")
+prompt("Thank you for using the Loan Payment Calculator. Good bye!")
