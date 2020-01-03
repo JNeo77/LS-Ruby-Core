@@ -33,7 +33,7 @@ loop do # main loop
     end
   end
 
-  computer_choice = ['rock', 'paper', 'scissors'].sample
+  computer_choice = VALID_CHOICES.sample
 
   prompt("You chose: #{choice}; Computer chose: #{computer_choice}")
 
